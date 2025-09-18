@@ -186,3 +186,15 @@ litters_df =
 view(litters_df)
 ```
 
+Learning assessment
+
+```{r}
+pups_df = 
+  read_csv("data_import_examples/FAS_pups.csv", skip = 3, na = c("NA", ".", "")) |>
+  janitor::clean_names() |>
+  filter(sex == 1) |>
+  select(-pd_ears) |>
+  mutate(pd_pivot_ge7 = pd_pivot >= 7)
+```
+
+
